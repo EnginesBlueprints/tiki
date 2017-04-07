@@ -244,12 +244,27 @@
         "name": "unlock_install",
         "label": "unlock install",
         "description": "Unlock the installation to perform updates and upgrades",
-        "return_type": "none",
+        "return_type": "json",
         "return_file_name": "",
         "enable_logging": false,
         "script": {
           "language": "sh",
           "content": "#!/bin/bash\r\n\r\nrm /home/app/db/lock"
+        },
+        "variables": [
+
+        ]
+      },
+      {
+        "name": "lock_install",
+        "label": "Lock install",
+        "description": "",
+        "return_type": "json",
+        "return_file_name": "",
+        "enable_logging": false,
+        "script": {
+          "language": "sh",
+          "content": "#!/bin/bash\r\n\r\ntouch /home/app/db/lock"
         },
         "variables": [
 
