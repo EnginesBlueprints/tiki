@@ -2,8 +2,8 @@
   "schema": {
     "type": "app_blueprint",
     "version": {
-      "major": 1,
-      "minor": 0
+      "major": 0,
+      "minor": 1
     },
     "origin": "Engines Developer Studio 0.2"
   },
@@ -14,14 +14,12 @@
         "minor": 1,
         "level": "alpha",
         "patch": 0
-      },
-      "timestamp": null
+      }
     },
     "software": {
       "display": {
         "title": "Tiki Wiki CMS Groupware",
         "label": "tiki",
-        "version": "",
         "description": "Tiki Wiki CMS Groupware -- A full-featured, open source, multilingual, all-in-one Wiki+CMS+Groupware written in PHP.",
         "url": "https://info.tiki.org/"
       },
@@ -29,32 +27,24 @@
         "label": "GNU GENERAL PUBLIC LICENSE V3",
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
-    }
+    },
+    "timestamp": "2018-03-24T09:36:18+11:00"
   },
   "software": {
     "base": {
       "name": "tiki",
       "framework": "apache_php",
+      "deployment_type": "web",
+      "http_protocol": "http_and_https",
       "memory": {
         "required": 128,
         "recommended": 256
       },
-      "http_protocol": "http_and_https",
-      "framework_port_override": "",
-      "deployment_type": "web",
-      "web_root_directory": "",
-      "continuous_deployment": false,
-      "install_form_comment": "",
-      "first_run_url": "",
       "installation_report": "Goto _Engines_Builder(http_protocol)://_Engines_Builder(fqdn)/\r\n\r\nlogin admin\r\npassword admin "
     },
-    "ports": [
-
-    ],
     "scripts": {
       "start": {
-        "language": "sh",
-        "content": ""
+        "language": "sh"
       },
       "install": {
         "language": "sh",
@@ -65,51 +55,41 @@
         "content": "#!/bin/bash\r\ntouch /home/app/db/lock\r\n"
       },
       "shutdown": {
-        "language": "sh",
-        "content": ""
+        "language": "sh"
       }
     },
-    "external_repositories": [
-
-    ],
     "system_packages": [
       {
-        "package": "pstotext",
-        "version": ""
+        "package": "pstotext"
       },
       {
-        "package": "catdoc",
-        "version": ""
+        "package": "catdoc"
       },
       {
-        "package": "elinks",
-        "version": ""
+        "package": "elinks"
       }
     ],
     "installed_packages": [
       {
-        "name": "tiki-16.2.zip",
-        "source_url": "https://sourceforge.net/projects/tikiwiki/files/Tiki_16.x_Tabbys/16.2/tiki-16.2.tar.gz/download",
+        "name": "tiki-18.1.tar.gz",
+        "source_url": "https://sourceforge.net/projects/tikiwiki/files/Tiki_18.x_Alcyone/18.1/tiki-18.1.tar.gz/download",
         "destination": "/",
         "extraction_command": "tar -xzpf",
-        "path_to_extracted": "tiki-16.2"
+        "path_to_extracted": "tiki-18.1"
       }
     ],
     "required_modules": [
       {
         "name": "rewrite",
-        "type": "apache",
-        "os_package": ""
+        "type": "apache"
       },
       {
         "name": "expires",
-        "type": "apache",
-        "os_package": ""
+        "type": "apache"
       },
       {
         "name": "mcrypt",
-        "type": "php",
-        "os_package": ""
+        "type": "php"
       }
     ],
     "service_configurations": [
@@ -117,14 +97,12 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "database/sql/mysql",
         "variables": {
-          "full_access": "false",
-          "name": "_Engines_Builder(engine_name)",
-          "database_host": "_Engines_System(mysql_host)",
           "database_name": "_Engines_Builder(engine_name)",
+          "database_host": "_Engines_System(mysql_host)",
           "db_username": "_Engines_Builder(engine_name)",
           "db_password": "_Engines_System(random(10))",
-          "db_flavor": "mysql2",
-          "collation": "utf8_general_ci"
+          "collation": "utf8_general_ci",
+          "full_access": "false"
         }
       },
       {
@@ -140,9 +118,6 @@
         }
       }
     ],
-    "environment_variables": [
-
-    ],
     "template_files": [
       {
         "path": "app/db/local.php",
@@ -150,50 +125,36 @@
         "content": "<?php\r\n$db_tiki='mysqli';\r\n$dbversion_tiki='14.0';\r\n$host_tiki='_Engines_Environment(dbhost)';\r\n$user_tiki='_Engines_Environment(dbuser)';\r\n$pass_tiki='_Engines_Environment(dbpasswd)';\r\n$dbs_tiki='_Engines_Environment(dbname)';\r\n$client_charset='utf8';\r\n// $dbfail_url = '';\r\n// If you experience text encoding issues after updating (e.g. apostrophes etc showing up as strange characters) \r\n// $client_charset='latin1';\r\n// $client_charset='utf8';\r\n// See http://tiki.org/ReleaseNotes5.0#Known_Issues and http://doc.tiki.org/Understanding+Encoding for more info\r\n\r\n// If your php installation does not not have pdo extension\r\n// $api_tiki = 'adodb';\r\n\r\n// Want configurations managed at the system level or restrict some preferences? http://doc.tiki.org/System+Configuration\r\n// $system_configuration_file = '/etc/tiki.ini';\r\n// $system_configuration_identifier = 'example.com';\r\n\r\n"
       }
     ],
-    "replacement_strings": [
-
-    ],
     "database_seed": {
-      "language": "text",
-      "content": "",
-      "script": false
+      "language": "text"
     },
     "file_write_permissions": [
       {
-        "path": "img/wiki_up",
-        "recursive": false
+        "path": "img/wiki_up"
       },
       {
-        "path": "dump",
-        "recursive": false
+        "path": "dump"
       },
       {
-        "path": "db/",
-        "recursive": false
+        "path": "db/"
       },
       {
-        "path": "whelp",
-        "recursive": false
+        "path": "whelp"
       },
       {
-        "path": "styles",
-        "recursive": false
+        "path": "styles"
       },
       {
-        "path": "temp",
-        "recursive": false
+        "path": "temp"
       },
       {
-        "path": "temp/cache",
-        "recursive": false
+        "path": "temp/cache"
       },
       {
-        "path": "img_trackers",
-        "recursive": false
+        "path": "img_trackers"
       },
       {
-        "path": "modules/cache",
-        "recursive": false
+        "path": "modules/cache"
       }
     ],
     "persistent_directories": [
@@ -212,67 +173,33 @@
         "path": "app/db/local.php"
       }
     ],
-    "components": {
-      "sources": [
-
-      ],
-      "path": "",
-      "extract": false
-    },
-    "workers": {
-      "blocking": "",
-      "commands": [
-
-      ]
-    },
-    "rake_tasks": [
-
-    ],
-    "custom_php_inis": [
-      {
-        "content": "upload_max_filesize = 250M\r\npost_max_size = 250M "
-      }
-    ],
-    "apache_htaccess_files": [
-
-    ],
-    "apache_httpd_configurations": [
-
-    ],
     "actionators": [
       {
         "name": "unlock_install",
         "label": "unlock install",
         "description": "Unlock the installation to perform updates and upgrades",
         "return_type": "json",
-        "return_file_name": "",
-        "enable_logging": false,
         "script": {
           "language": "sh",
           "content": "#!/bin/bash\r\n\r\nrm /home/app/db/lock"
-        },
-        "variables": [
-
-        ]
+        }
       },
       {
         "name": "lock_install",
         "label": "Lock install",
-        "description": "",
         "return_type": "json",
-        "return_file_name": "",
-        "enable_logging": false,
         "script": {
           "language": "sh",
           "content": "#!/bin/bash\r\n\r\ntouch /home/app/db/lock"
-        },
-        "variables": [
-
-        ]
+        }
       }
     ],
-    "schedules": [
-
-    ]
+    "framework_specific": {
+      "custom_php_inis": [
+        {
+          "content": "upload_max_filesize = 250M\r\npost_max_size = 250M "
+        }
+      ]
+    }
   }
 }
