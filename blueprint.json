@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2019-02-22T15:23:14+11:00"
+    "timestamp": "2019-02-22T16:06:58+11:00"
   },
   "software": {
     "base": {
@@ -117,6 +117,13 @@
           "permissions": "rw",
           "engine_path": "persistant"
         }
+      }
+    ],
+    "template_files": [
+      {
+        "path": "db/local.php",
+        "language": "php",
+        "content": "$host_tiki='_Engines_Environment(dbhost)';\r\n$user_tiki='_Engines_Environment(dbuser)';\r\n$pass_tiki='_Engines_Environment(dbpasswd)';\r\n$dbs_tiki='_Engines_Environment(dbname)';\r\n$client_charset='utf8'\r\n$dbfail_url = '';\r\n"
       }
     ],
     "database_seed": {
