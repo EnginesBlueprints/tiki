@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-03-24T09:36:18+11:00"
+    "timestamp": "2019-02-22T14:22:49+11:00"
   },
   "software": {
     "base": {
@@ -71,11 +71,12 @@
     ],
     "installed_packages": [
       {
-        "name": "tiki-18.1.tar.gz",
-        "source_url": "https://sourceforge.net/projects/tikiwiki/files/Tiki_18.x_Alcyone/18.1/tiki-18.1.tar.gz/download",
+        "name": "tiki-19.1.tar.gz",
+        "download_type": "http(s)",
+        "source_url": "https://jaist.dl.sourceforge.net/project/tikiwiki/Tiki_19.x_Denebola/19.1/tiki-19.1.tar.gz",
         "destination": "/",
         "extraction_command": "tar -xzpf",
-        "path_to_extracted": "tiki-18.1"
+        "path_to_extracted": "tiki-19.1"
       }
     ],
     "required_modules": [
