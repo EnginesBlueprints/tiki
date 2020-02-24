@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-02-24T22:13:43+11:00"
+    "timestamp": "2020-02-24T22:15:17+11:00"
   },
   "software": {
     "base": {
@@ -125,7 +125,7 @@
       {
         "path": "db/local.php",
         "language": "php",
-        "content": "<?php\r\n$db_tiki='mysql';\r\n$dbs_tiki='tiki_80';\r\n$host_tiki='_Engines_Environment(dbhost)';\r\n$user_tiki='_Engines_Environment(dbuser)';\r\n$pass_tiki='_Engines_Environment(dbpasswd)';\r\n$dbs_tiki='_Engines_Environment(dbname)';\r\n$client_charset='utf8'\r\n$dbfail_url = '';\r\n"
+        "content": "<?php\r\n$db_tiki='mysql';\r\n$dbs_tiki='tiki_80';\r\n$host_tiki='_Engines_Environment(dbhost)';\r\n$user_tiki='_Engines_Environment(dbuser)';\r\n$pass_tiki='_Engines_Environment(dbpasswd)';\r\n$dbs_tiki='_Engines_Environment(dbname)';\r\n$client_charset='utf8';\r\n$dbfail_url = '';\r\n"
       }
     ],
     "database_seed": {
