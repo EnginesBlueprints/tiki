@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-02-24T14:34:31+11:00"
+    "timestamp": "2020-02-24T18:20:08+11:00"
   },
   "software": {
     "base": {
@@ -48,7 +48,7 @@
       },
       "install": {
         "language": "sh",
-        "content": "#!/bin/sh\r\nphp /home/app/console.php database:install\r\n\r\n"
+        "content": "#!/bin/sh\r\ncat /home/app/db/local.php \r\nphp /home/app/console.php database:install\r\n\r\n"
       },
       "post_install": {
         "language": "sh",
@@ -125,7 +125,7 @@
       {
         "path": "db/local.php",
         "language": "php",
-        "content": "$host_tiki='_Engines_Environment(dbhost)';\r\n$user_tiki='_Engines_Environment(dbuser)';\r\n$pass_tiki='_Engines_Environment(dbpasswd)';\r\n$dbs_tiki='_Engines_Environment(dbname)';\r\n$client_charset='utf8'\r\n$dbfail_url = '';\r\n"
+        "content": "<?php\r\n$db_tiki='mysql';\r\n$dbs_tiki='tiki_80';\r\n$host_tiki='_Engines_Environment(dbhost)';\r\n$user_tiki='_Engines_Environment(dbuser)';\r\n$pass_tiki='_Engines_Environment(dbpasswd)';\r\n$dbs_tiki='_Engines_Environment(dbname)';\r\n$client_charset='utf8'\r\n$dbfail_url = '';\r\n"
       }
     ],
     "database_seed": {
