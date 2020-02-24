@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2019-02-22T16:06:58+11:00"
+    "timestamp": "2020-02-24T14:34:31+11:00"
   },
   "software": {
     "base": {
@@ -71,12 +71,12 @@
     ],
     "installed_packages": [
       {
-        "name": "tiki-19.1.tar.gz",
+        "name": "tiki-20.1.tar.gz",
         "download_type": "http(s)",
-        "source_url": "https://jaist.dl.sourceforge.net/project/tikiwiki/Tiki_19.x_Denebola/19.1/tiki-19.1.tar.gz",
+        "source_url": "https://jaist.dl.sourceforge.net/project/tikiwiki/Tiki_20.x_Tarazed/20.1/tiki-20.1.tar.gz",
         "destination": "/",
         "extraction_command": "tar -xzpf",
-        "path_to_extracted": "tiki-19.1"
+        "path_to_extracted": "tiki-20.1"
       }
     ],
     "required_modules": [
@@ -110,12 +110,14 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
+          "service_name": "persist",
+          "volume_src": " ",
+          "engine_path": "persistant",
+          "permissions": "rw",
           "user": "_Engines_Builder(data_uid)",
           "group": "_Engines_Builder(group_uid)",
-          "service_name": "_Engines_Builder(engine_name)",
-          "volume_src": " ",
-          "permissions": "rw",
-          "engine_path": "persistant"
+          "fw_user": "_Engines_Builder(cont_user_id)",
+          "exclude_from_backup": "false"
         }
       }
     ],
@@ -160,13 +162,16 @@
     ],
     "persistent_directories": [
       {
-        "path": "app/templates"
+        "path": "app/templates",
+        "volume_name": "persist"
       },
       {
-        "path": "app/img/wiki"
+        "path": "app/img/wiki",
+        "volume_name": "persist"
       },
       {
-        "path": "app/templates_c"
+        "path": "app/templates_c",
+        "volume_name": "persist"
       }
     ],
     "persistent_files": [
