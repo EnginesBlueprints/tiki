@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-02-24T18:20:08+11:00"
+    "timestamp": "2020-02-24T22:13:43+11:00"
   },
   "software": {
     "base": {
@@ -154,10 +154,13 @@
         "path": "temp/cache"
       },
       {
-        "path": "img_trackers"
+        "path": "img/trackers"
       },
       {
         "path": "modules/cache"
+      },
+      {
+        "path": "/temp/templates_c/"
       }
     ],
     "persistent_directories": [
