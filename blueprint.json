@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-02-27T12:40:01+11:00"
+    "timestamp": "2020-02-27T16:29:01+11:00"
   },
   "software": {
     "base": {
@@ -91,6 +91,21 @@
       {
         "name": "mcrypt",
         "type": "php"
+      },
+      {
+        "name": "curl",
+        "type": "php",
+        "os_package": "php-curl"
+      },
+      {
+        "name": "intl",
+        "type": "php",
+        "os_package": "php-intl"
+      },
+      {
+        "name": "zip",
+        "type": "php",
+        "os_package": "php-zip"
       }
     ],
     "service_configurations": [
@@ -102,8 +117,9 @@
           "database_host": "_Engines_System(mysql_host)",
           "db_username": "_Engines_Builder(engine_name)",
           "db_password": "_Engines_System(random(10))",
-          "collation": "utf8_general_ci",
-          "full_access": "false"
+          "collation": "utf8mb4_unicode_ci",
+          "full_access": "false",
+          "char_set": "utf8mb4"
         }
       },
       {
@@ -150,9 +166,6 @@
     },
     "file_write_permissions": [
       {
-        "path": "img/wiki_up"
-      },
-      {
         "path": "dump"
       },
       {
@@ -178,6 +191,9 @@
       },
       {
         "path": "/temp/templates_c/"
+      },
+      {
+        "path": "storage/fgal/"
       }
     ],
     "persistent_directories": [
@@ -191,6 +207,10 @@
       },
       {
         "path": "app/templates_c",
+        "volume_name": "persist"
+      },
+      {
+        "path": "img/wiki_up",
         "volume_name": "persist"
       }
     ],
