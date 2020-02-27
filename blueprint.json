@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-02-27T16:29:01+11:00"
+    "timestamp": "2020-02-27T17:01:17+11:00"
   },
   "software": {
     "base": {
@@ -210,7 +210,7 @@
         "volume_name": "persist"
       },
       {
-        "path": "img/wiki_up",
+        "path": "app/img/wiki_up",
         "volume_name": "persist"
       }
     ],
