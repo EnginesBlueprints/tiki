@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-08-19T09:09:12+10:00"
+    "timestamp": "2020-08-19T09:22:05+10:00"
   },
   "software": {
     "base": {
@@ -76,7 +76,7 @@
         "download_type": "http(s)",
         "source_url": "https://jaist.dl.sourceforge.net/project/tikiwiki/Tiki_21.x_UY_Scuti/21.1/tiki-21.1.zip",
         "destination": "/",
-        "extraction_command": "tar -xzpf",
+        "extraction_command": "unzip ",
         "path_to_extracted": "tiki-21.1"
       }
     ],
