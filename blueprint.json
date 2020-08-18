@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-08-17T21:51:14+10:00"
+    "timestamp": "2020-08-19T08:34:00+10:00"
   },
   "software": {
     "base": {
@@ -47,12 +47,10 @@
         "language": "sh"
       },
       "install": {
-        "language": "sh",
-        "content": "#!/bin/sh\r\ncat /home/app/db/local.php \r\nphp /home/app/console.php database:install\r\n#echo  \" INSERT INTO \\`tiki_preferences\\` (\\`name\\`, \\`value\\`) VALUES ('feature_port_rewriting', 'y'); \" | mysql -h $dbhost -u $dbuser --password=$dbpasswd $dbname\r\nphp /home/app/console.php preferences:set feature_port_rewriting y\r\nphp /home/app/console.php preferences:set http_port 80\r\nphp /home/app/console.php preferences:set https_port 443\r\n\r\n"
+        "language": "sh"
       },
       "post_install": {
-        "language": "sh",
-        "content": "#!/bin/bash\r\ntouch /home/app/db/lock\r\n"
+        "language": "sh"
       },
       "shutdown": {
         "language": "sh"
