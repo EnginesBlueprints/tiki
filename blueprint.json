@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-08-19T09:22:05+10:00"
+    "timestamp": "2020-08-19T11:21:02+10:00"
   },
   "software": {
     "base": {
@@ -107,6 +107,11 @@
         "name": "zip",
         "type": "php",
         "os_package": "php-zip"
+      },
+      {
+        "name": "ldap",
+        "type": "php",
+        "os_package": "php-ldap"
       }
     ],
     "service_configurations": [
@@ -136,6 +141,23 @@
           "fw_user": "_Engines_Builder(cont_user_id)",
           "exclude_from_backup": "false"
         }
+      }
+    ],
+    "replacement_strings": [
+      {
+        "string": "72s/^.*$/\\\\$reverse_proxy = true;/",
+        "source_file": "/home/app/lib/setup/absolute_urls.php",
+        "destination_file": "/home/app/lib/setup/absolute_urls.php"
+      },
+      {
+        "string": "73s/^.*$/\\\\$prefs['https_port'] =443;/",
+        "source_file": "/home/app/lib/setup/absolute_urls.php",
+        "destination_file": "/home/app/lib/setup/absolute_urls.php"
+      },
+      {
+        "string": "71s/^.*$/\\\\$prefs['http_port'] =80;/",
+        "source_file": "/home/app/lib/setup/absolute_urls.php",
+        "destination_file": "/home/app/lib/setup/absolute_urls.php"
       }
     ],
     "database_seed": {
@@ -168,6 +190,9 @@
       },
       {
         "path": "/temp/templates_c/"
+      },
+      {
+        "path": "storage/fgal/"
       }
     ],
     "persistent_directories": [
@@ -185,6 +210,12 @@
       },
       {
         "path": "app/img/wiki_up",
+        "volume_name": "persist"
+      }
+    ],
+    "persistent_files": [
+      {
+        "path": "/home/app/db/local.php",
         "volume_name": "persist"
       }
     ],
