@@ -28,7 +28,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-08-19T11:21:02+10:00"
+    "timestamp": "2020-08-19T12:06:31+10:00"
   },
   "software": {
     "base": {
@@ -145,17 +145,17 @@
     ],
     "replacement_strings": [
       {
-        "string": "72s/^.*$/\\\\$reverse_proxy = true;/",
+        "string": "72s/^.*$/\\$reverse_proxy = true;/",
         "source_file": "/home/app/lib/setup/absolute_urls.php",
         "destination_file": "/home/app/lib/setup/absolute_urls.php"
       },
       {
-        "string": "73s/^.*$/\\\\$prefs['https_port'] =443;/",
+        "string": "73s/^.*$/\\$prefs['https_port'] =443;/",
         "source_file": "/home/app/lib/setup/absolute_urls.php",
         "destination_file": "/home/app/lib/setup/absolute_urls.php"
       },
       {
-        "string": "71s/^.*$/\\\\$prefs['http_port'] =80;/",
+        "string": "71s/^.*$/\\$prefs['http_port'] =80;/",
         "source_file": "/home/app/lib/setup/absolute_urls.php",
         "destination_file": "/home/app/lib/setup/absolute_urls.php"
       }
